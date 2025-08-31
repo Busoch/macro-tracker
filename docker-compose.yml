@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    env_file: .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile.backend
+    env_file: .env
+    depends_on:
+      - db
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"  
+    volumes:
+      - static_volume:/app/staticfiles  # ✅ persist Django static files
+      - media_volume:/app/media         # ✅ persist uploaded media files (if any)
+
+  frontend:
+    build:
+      context: ./nutrition-tracker
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    volumes:
+      - static_volume:/usr/share/nginx/html/static  # ✅ mount Django static into Nginx
+      - media_volume:/usr/share/nginx/html/media    # ✅ mount Django media into Nginx
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
