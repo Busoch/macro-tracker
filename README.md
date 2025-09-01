@@ -2,18 +2,6 @@
 
 A **backend-focused nutrition tracking application** built with **Django REST Framework**. The project provides APIs for managing users, logging food entries, and tracking daily macros. A React frontend consumes these APIs, served through **Nginx** for production-ready deployment.
 
----
-
-## Table of Contents
-
-- [Features](#features)  
-- [Tech Stack](#tech-stack)  
-- [Getting Started](#getting-started)  
-- [API Endpoints](#api-endpoints)  
-- [Project Structure](#project-structure)  
-- [Contributing](#contributing)  
-
----
 
 ## Features
 
@@ -26,7 +14,6 @@ A **backend-focused nutrition tracking application** built with **Django REST Fr
 
 >  **Backend-focused:** Don't mind my frontend, the primary emphasis of this project is on building a robust REST API and backend infrastructure.
 
----
 
 ## Tech Stack
 
