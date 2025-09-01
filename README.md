@@ -12,7 +12,7 @@ A **backend-focused nutrition tracking application** built with **Django REST Fr
 - Frontend served through Nginx for static files  
 - Fully containerized using Docker and Docker Compose  
 
->  **Backend-focused:** Don't mind my frontend, the primary emphasis of this project is on building a robust REST API and backend infrastructure.
+**Backend-focused:** Don't mind my frontend, the primary emphasis of this project is on building a robust REST API and backend infrastructure.
 
 
 ## Tech Stack
